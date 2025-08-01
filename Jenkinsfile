@@ -21,12 +21,13 @@ pipeline {
             steps {
                 script {
                     if (params.ENVIRONMENT == 'dev') {
-                        env.REMOTE_IP = '1.2.3.4'
+                        env.REMOTE_IP = '13.232.90.112'
                     } else if (params.ENVIRONMENT == 'staging') {
-                        env.REMOTE_IP = '5.6.7.8'
+                        env.REMOTE_IP = '13.232.90.112'
                     } else if (params.ENVIRONMENT == 'prod') {
-                        env.REMOTE_IP = '9.10.11.12'
+                        env.REMOTE_IP = '13.232.90.112'
                     }
+                    echo "🌐 Target Environment: ${params.ENVIRONMENT}, Deploying to: ${env.REMOTE_IP}"
                 }
             }
         }
